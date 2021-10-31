@@ -1,8 +1,32 @@
-import '../styles/globals.css'
-import type { AppProps } from 'next/app'
+import { ChakraProvider, extendTheme } from "@chakra-ui/react";
+import Section1 from "../src/Section1";
 
-function MyApp({ Component, pageProps }: AppProps) {
-  return <Component {...pageProps} />
+const colors = {
+  bg: {
+    1: "#FFFFFC",
+    2: "#FDFFB6",
+    3: "#CAFFBF",
+  },
+  button: {
+    1: "#9BF6FF",
+    2: "#A0C4FF",
+    3: "#BDB2FF",
+  },
+  misc: {
+    1: "#FFC6FF",
+    2: "#FFD6A5",
+    3: "#FFADAD",
+  },
+};
+
+const theme = extendTheme({ colors });
+
+function MyApp() {
+  return (
+    <ChakraProvider theme={theme}>
+      <Section1 />
+    </ChakraProvider>
+  );
 }
 
-export default MyApp
+export default MyApp;
