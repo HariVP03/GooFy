@@ -1,11 +1,16 @@
-import { ChakraProvider, extendTheme } from "@chakra-ui/react";
+import {
+  ChakraProvider,
+  extendTheme,
+  withDefaultColorScheme,
+} from "@chakra-ui/react";
 import "../styles/globals.css";
 import Section1 from "../src/Section1";
 
 const colors = {
   bg: {
     1: "#FFFFFC",
-    2: "#FDFFB6",
+    // 2: "#FDFFB6",
+    2: "#FEF0E5",
     3: "#CAFFBF",
   },
   button: {

@@ -160,9 +160,10 @@ const Navbar: React.FC = () => {
       <Flex
         alignItems="center"
         justifyContent="space-between"
-        mx={2}
+        px={2}
         borderWidth={0}
         overflowX="auto"
+        bg="bg.1"
       >
         <Tabs defaultIndex={0} borderBottomColor="transparent">
           <TabList>
@@ -196,7 +197,7 @@ const Navbar: React.FC = () => {
             <InputLeftElement pointerEvents="none">
               <AiOutlineSearch />
             </InputLeftElement>
-            <Input type="tel" placeholder="Search..." />
+            <Input type="tel" placeholder="Search..." _focus={{}} />
           </InputGroup>
         </HStack>
       </Flex>

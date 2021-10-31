@@ -6,3 +6,6 @@
 * {
   font-family: "Zen Kurenaido", sans-serif;
 }
+input.create-post::placeholder {
+  color: black;
+}
