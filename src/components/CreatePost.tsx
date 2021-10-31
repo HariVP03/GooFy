@@ -20,7 +20,7 @@ const CreatePost: React.FC = () => {
       justifyContent="center"
       alignItems="center"
       minW="90%"
-      maxH="80%"
+      minH="80%"
       bg="bg.1"
     >
       <Flex mb="10px" direction="column">
@@ -28,6 +28,7 @@ const CreatePost: React.FC = () => {
           Post Something...
         </Heading>
         <Textarea
+          resize="none"
           size="lg"
           minW="600px"
           textOverflow="wrap"
