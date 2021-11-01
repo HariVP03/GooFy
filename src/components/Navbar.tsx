@@ -35,7 +35,7 @@ const Navbar: React.FC = () => {
 
   return (
     // TODO: Optimize the mobile view of the navbar
-    <Box shadow="md" width="100%" position="absolute">
+    <Box shadow="md" width="100%" position="fixed" zIndex="5">
       <chakra.header
         bg="bg.2"
         borderColor="gray.600"

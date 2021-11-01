@@ -8,22 +8,24 @@ import {
   Heading,
   Icon,
   Stack,
-  useColorModeValue,
   VisuallyHidden,
 } from "@chakra-ui/react";
 
 const CreatePost: React.FC = () => {
   return (
     <Flex
+      p={5}
       direction="column"
       rounded="xl"
-      justifyContent="center"
+      mt="30vh"
       alignItems="center"
-      minW="90%"
-      minH="80%"
+      justifyContent="center"
+      minW="70%"
+      minH="10vh"
       bg="bg.1"
+      maxH="100vh"
     >
-      <Flex mb="10px" direction="column">
+      <Flex mb="10px" direction="column" bg="bg.1">
         <Heading textAlign="center" fontFamily="Poppins" mb="10px">
           Post Something...
         </Heading>
@@ -92,7 +94,7 @@ const CreatePost: React.FC = () => {
               or drag and drop
             </Text>
           </Flex>
-          <Text fontSize="xs" color={useColorModeValue("gray.500", "gray.50")}>
+          <Text fontFamily="Poppins" fontSize="md" color="gray.500">
             PNG, JPG, GIF up to 10MB
           </Text>
         </Stack>
@@ -102,6 +104,8 @@ const CreatePost: React.FC = () => {
         _hover={{ backgroundColor: "rgba(0, 0, 0, 0.05)" }}
         size="lg"
         maxW="100px"
+        fontWeight="300"
+        fontFamily="Poppins"
       >
         Post
       </Button>
