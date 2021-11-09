@@ -1,5 +1,5 @@
 import React from "react";
-
+import NextLink from "next/link";
 import {
   chakra,
   Box,
@@ -35,9 +35,15 @@ const Navbar: React.FC = () => {
 
   return (
     // TODO: Optimize the mobile view of the navbar
-    <Box shadow="md" width="100%" position="fixed" zIndex="5">
+    <Box
+      style={{ backdropFilter: "blur(5px)" }}
+      shadow="md"
+      width="100%"
+      position="fixed"
+      zIndex="5"
+    >
       <chakra.header
-        bg="bg.2"
+        bg="bg.4"
         borderColor="gray.600"
         borderBottomWidth={1}
         w="full"
@@ -76,6 +82,7 @@ const Navbar: React.FC = () => {
                   justifySelf="self-start"
                   onClick={mobileNav.onClose}
                 />
+
                 <Button
                   color="gray.700"
                   w="full"
@@ -84,6 +91,7 @@ const Navbar: React.FC = () => {
                 >
                   Dashboard
                 </Button>
+
                 <Button
                   w="full"
                   variant="solid"
@@ -101,20 +109,19 @@ const Navbar: React.FC = () => {
                 </Button>
               </VStack>
             </Box>
+
             <chakra.h1
-              bgGradient="linear(to-r, misc.3,button.2)"
-              bgClip="text"
+              color="button.1"
               fontSize="3xl"
               fontFamily="'Fredoka One', cursive;"
             >
-              GooFy
+              <NextLink href="/">GooFy</NextLink>
             </chakra.h1>
           </HStack>
           <HStack spacing={3} display="flex" alignItems="center">
             <HStack spacing={3} display={{ base: "none", md: "inline-flex" }}>
               <Button
                 color="gray.800"
-                letterSpacing="0.15ch"
                 variant="ghost"
                 leftIcon={<AiFillHome />}
                 size="md"
@@ -124,7 +131,6 @@ const Navbar: React.FC = () => {
                 Dashboard
               </Button>
               <Button
-                letterSpacing="0.15ch"
                 variant="solid"
                 color="gray.800"
                 leftIcon={<AiOutlineInbox />}
@@ -134,7 +140,6 @@ const Navbar: React.FC = () => {
                 Inbox
               </Button>
               <Button
-                letterSpacing="0.15ch"
                 variant="ghost"
                 color="gray.800"
                 leftIcon={<BsFillCameraVideoFill />}
@@ -164,43 +169,7 @@ const Navbar: React.FC = () => {
         borderWidth={0}
         overflowX="auto"
         bg="bg.1"
-      >
-        <Tabs defaultIndex={0} borderBottomColor="transparent">
-          <TabList>
-            <Tab fontFamily="Lato" py={4} m={0} _focus={{ boxShadow: "none" }}>
-              Feed
-            </Tab>
-            <Tab fontFamily="Lato" py={4} m={0} _focus={{ boxShadow: "none" }}>
-              Friends
-            </Tab>
-            <Tab fontFamily="Lato" py={4} m={0} _focus={{ boxShadow: "none" }}>
-              Groups
-            </Tab>
-            <Tab fontFamily="Lato" py={4} m={0} _focus={{ boxShadow: "none" }}>
-              Saved
-            </Tab>
-            <Tab fontFamily="Lato" py={4} m={0} _focus={{ boxShadow: "none" }}>
-              Events
-            </Tab>{" "}
-          </TabList>
-        </Tabs>
-        <Spacer />
-        <HStack spacing={3} alignItems="center">
-          <InputGroup
-            border="1px solid"
-            borderColor="misc.2"
-            minW="500px"
-            rounded="md"
-            display={{ base: "none", lg: "block" }}
-            ml="auto"
-          >
-            <InputLeftElement pointerEvents="none">
-              <AiOutlineSearch />
-            </InputLeftElement>
-            <Input type="tel" placeholder="Search..." _focus={{}} />
-          </InputGroup>
-        </HStack>
-      </Flex>
+      ></Flex>
     </Box>
   );
 };

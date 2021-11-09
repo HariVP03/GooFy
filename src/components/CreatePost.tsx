@@ -14,10 +14,11 @@ import {
 const CreatePost: React.FC = () => {
   return (
     <Flex
+      boxShadow="2xl"
       p={5}
       direction="column"
       rounded="xl"
-      mt="30vh"
+      mt="25vh"
       alignItems="center"
       justifyContent="center"
       minW="70%"
@@ -26,8 +27,13 @@ const CreatePost: React.FC = () => {
       maxH="100vh"
     >
       <Flex mb="10px" direction="column" bg="bg.1">
-        <Heading textAlign="center" fontFamily="Poppins" mb="10px">
-          Post Something...
+        <Heading
+          color="white"
+          textAlign="center"
+          fontFamily="Poppins"
+          mb="10px"
+        >
+          Create a Post...
         </Heading>
         <Textarea
           resize="none"
@@ -35,11 +41,12 @@ const CreatePost: React.FC = () => {
           minW="600px"
           textOverflow="wrap"
           outline="1px solid"
-          outlineColor="misc.2"
+          outlineColor="gray.700"
           _focus={{}}
           variant="outline"
           _placeholder={{ color: "gray.500" }}
           fontFamily="Lato"
+          color="gray.100"
           justifyContent="flex-start"
           placeholder="Share something with your friends!"
         />
@@ -60,7 +67,7 @@ const CreatePost: React.FC = () => {
           <Icon
             mx="auto"
             boxSize={12}
-            color="gray.500"
+            color="gray.100"
             stroke="currentColor"
             fill="none"
             viewBox="0 0 48 48"
@@ -79,7 +86,7 @@ const CreatePost: React.FC = () => {
               cursor="pointer"
               rounded="md"
               fontSize="md"
-              color="misc.3"
+              color="red.100"
               pos="relative"
               _hover={{
                 color: "misc.2",
@@ -90,7 +97,7 @@ const CreatePost: React.FC = () => {
                 <input id="file-upload" name="file-upload" type="file" />
               </VisuallyHidden>
             </chakra.label>
-            <Text pl={1} fontFamily="Poppins">
+            <Text pl={1} fontFamily="Poppins" color="gray.100">
               or drag and drop
             </Text>
           </Flex>
@@ -99,14 +106,7 @@ const CreatePost: React.FC = () => {
           </Text>
         </Stack>
       </Flex>
-      <Button
-        bg="button.1"
-        _hover={{ backgroundColor: "rgba(0, 0, 0, 0.05)" }}
-        size="lg"
-        maxW="100px"
-        fontWeight="300"
-        fontFamily="Poppins"
-      >
+      <Button my={3} variant="filled-outline" size="lg" maxW="100px">
         Post
       </Button>
     </Flex>

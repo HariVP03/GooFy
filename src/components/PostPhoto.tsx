@@ -10,7 +10,7 @@ const PostPhoto: React.FC = () => {
     <Flex
       maxW="100%"
       minH="700px"
-      bg="bg.3"
+      bg="bg.1"
       my="20px"
       p={3}
       rounded="lg"
@@ -19,14 +19,26 @@ const PostPhoto: React.FC = () => {
     >
       <Flex w="100%" maxH="10%" mt={3} px={3} alignItems="center">
         <Avatar src="https://bit.ly/dan-abramov" />
-        <Text fontFamily="Poppins" fontSize="xl" fontWeight="bold" ml={3}>
+        <Text
+          color="gray.100"
+          fontFamily="Poppins"
+          fontSize="xl"
+          fontWeight="bold"
+          ml={3}
+        >
           Dan Abramov
         </Text>
-        <Text fontFamily="Lato" fontSize="lg" fontWeight="normal">
+        <Text
+          color="gray.100"
+          fontFamily="Lato"
+          fontSize="lg"
+          fontWeight="normal"
+        >
           &nbsp; posted this photo an hour ago
         </Text>
       </Flex>
       <Flex
+        color="gray.100"
         minH="80%"
         my="20px"
         bgImage="https://images.unsplash.com/photo-1494783367193-149034c05e8f?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1470&q=80"
@@ -46,7 +58,7 @@ const PostPhoto: React.FC = () => {
           fontSize="lg"
           cursor="pointer"
           bg=""
-          color={clicked1 ? "blue" : "black"}
+          color={clicked1 ? "blue.400" : "gray.100"}
           _focus={{}}
           onClick={(e) => {
             setClicked1(!clicked1);
@@ -61,7 +73,7 @@ const PostPhoto: React.FC = () => {
           _focus={{}}
           fontSize="lg"
           cursor="pointer"
-          color={clicked2 ? "blue" : "black"}
+          color={clicked2 ? "blue.400" : "gray.100"}
           onClick={(e) => {
             setClicked2(!clicked2);
           }}
@@ -75,7 +87,7 @@ const PostPhoto: React.FC = () => {
           bg=""
           fontSize="lg"
           cursor="pointer"
-          color={clicked3 ? "blue" : "black"}
+          color={clicked3 ? "blue.400" : "gray.100"}
           onClick={(e) => {
             setClicked3(!clicked3);
           }}

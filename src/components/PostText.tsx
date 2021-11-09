@@ -6,12 +6,19 @@ const PostText: React.FC = () => {
   const [clicked2, setClicked2] = useState(false);
   const [clicked3, setClicked3] = useState(false);
 
+  var textArray = [
+    "Yo mama so fat she falls off both sides of the bed",
+    "Yo mama so ugly when she visits the dentist they make her lay face down",
+    "Yo mama so fat Thanos needed to snap twice to get rid of her entire body",
+    "Yo mama so fat she falls off both sides of the bed",
+  ];
+
   return (
     <Flex
       maxW="100%"
       minH="100px"
       maxH="500px"
-      bg="bg.3"
+      bg="bg.1"
       my="20px"
       p={3}
       rounded="lg"
@@ -20,10 +27,21 @@ const PostText: React.FC = () => {
     >
       <Flex w="100%" maxH="10%" mt={3} px={3} alignItems="center">
         <Avatar src="https://bit.ly/dan-abramov" />
-        <Text fontFamily="Poppins" fontSize="xl" fontWeight="bold" ml={3}>
+        <Text
+          color="gray.100"
+          fontFamily="Poppins"
+          fontSize="xl"
+          fontWeight="bold"
+          ml={3}
+        >
           Dan Abramov
         </Text>
-        <Text fontFamily="Lato" fontSize="lg" fontWeight="normal">
+        <Text
+          color="gray.100"
+          fontFamily="Lato"
+          fontSize="lg"
+          fontWeight="normal"
+        >
           &nbsp; posted this an hour ago
         </Text>
       </Flex>
@@ -35,20 +53,11 @@ const PostText: React.FC = () => {
         fontFamily="Poppins"
         direction="column"
       >
-        <Text fontFamily="Poppins" fontSize="md">
-          Yo mama so fat she falls off both sides of the bed
-        </Text>
-        <Text fontFamily="Poppins" fontSize="md">
-          Yo mama so ugly when she visits the dentist they make her lay face
-          down
-        </Text>
-        <Text fontFamily="Poppins" fontSize="md">
-          Yo mama so fat Thanos needed to snap twice to get rid of her entire
-          body
-        </Text>
-        <Text fontFamily="Poppins" fontSize="md">
-          Yo mama so fat she falls off both sides of the bed
-        </Text>
+        {textArray.map((sentence) => (
+          <Text key={sentence} size="md" color="gray.100">
+            {sentence}
+          </Text>
+        ))}
       </Flex>
       <Flex
         minH="5%"
@@ -62,7 +71,7 @@ const PostText: React.FC = () => {
           fontSize="lg"
           cursor="pointer"
           bg=""
-          color={clicked1 ? "blue" : "black"}
+          color={clicked1 ? "blue.400" : "gray.100"}
           _focus={{}}
           onClick={(e) => {
             setClicked1(!clicked1);
@@ -77,7 +86,7 @@ const PostText: React.FC = () => {
           _focus={{}}
           fontSize="lg"
           cursor="pointer"
-          color={clicked2 ? "blue" : "black"}
+          color={clicked2 ? "blue.400" : "gray.100"}
           onClick={(e) => {
             setClicked2(!clicked2);
           }}
@@ -91,7 +100,7 @@ const PostText: React.FC = () => {
           bg=""
           fontSize="lg"
           cursor="pointer"
-          color={clicked3 ? "blue" : "black"}
+          color={clicked3 ? "blue.400" : "gray.100"}
           onClick={(e) => {
             setClicked3(!clicked3);
           }}
